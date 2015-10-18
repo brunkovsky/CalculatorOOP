@@ -8,6 +8,6 @@ public class PlusTest {
 
     @Test
     public void testOperation() {
-        assertEquals(10.0, new Plus().operation(4, 6));
+        assertEquals(10.0, new Calculator.Plus().operation(4, 6));
     }
 }

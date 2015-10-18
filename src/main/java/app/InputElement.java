@@ -1,12 +1,19 @@
 package app;
 
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class InputElement implements Input {
+    private Set<Character> answerSet = new HashSet<>();
+
+    public InputElement() {
+        this.fillAnswerSet('y');
+        this.fillAnswerSet('n');
+    }
 
     @Override
-    public Double myInputOperand(Double previousResult, Scanner scanner) {
+    public Double inputOperand(Double previousResult, Scanner scanner) {
         Double operandResult = previousResult;
         String string;
         do {
@@ -25,7 +32,7 @@ public class InputElement implements Input {
     }
 
     @Override
-    public Character myInputSign(Set<Character> operationsSet, Scanner scanner) {
+    public Character inputSign(Set<Character> operationsSet, Scanner scanner) {
         Character signResult;
         String string;
         for (Character character : operationsSet)
@@ -42,5 +49,14 @@ public class InputElement implements Input {
         }
         while (true);
         return signResult;
+    }
+
+    @Override
+    public boolean fillAnswerSet(Character character) {
+        return answerSet.add(character);
+    }
+
+    public Set<Character> getAnswerSet() {
+        return answerSet;
     }
 }
