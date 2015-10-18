@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();       // инициализация базовых операций происходит в конструкторе
+        Calculator calculator = new Calculator();
         calculator.addOperation(new Calculator.Divide(), ':');          // так можно добавлять знаки для операций
         calculator.addOperation(new Calculator.Multiply(), 'x');        // так можно добавлять знаки для операций
         calculator.addOperation(new Calculator.Operations() {

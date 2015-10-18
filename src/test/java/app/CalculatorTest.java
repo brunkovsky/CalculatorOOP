@@ -52,5 +52,6 @@ public class CalculatorTest {
         assertEquals(2.5, testCalculator.calculate(2.5, -2.5, 'a'));
         assertEquals(6.5, testCalculator.calculate(32.5, 6.5, 'i'));
         assertEquals(-2.5, testCalculator.calculate(2.5, -2.5, 'i'));
+        assertEquals(-2.5, testCalculator.calculate(2.5, -2.5, 'q'));
     }
 }

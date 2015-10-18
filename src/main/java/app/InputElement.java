@@ -13,6 +13,13 @@ public class InputElement implements Input {
     }
 
     @Override
+    /**
+     * <p>Операция ввода числа Double</p>
+     * <p>не выходит из метода до тех пор, пока не введено число Double.</p>
+     * @param previousResult число Double (возвращается методом, если введена пустая строка ("\n"))
+     * @param scanner переменная типа Scanner
+     * @return Double число
+     */
     public Double inputOperand(Double previousResult, Scanner scanner) {
         Double operandResult = previousResult;
         String string;
@@ -32,6 +39,14 @@ public class InputElement implements Input {
     }
 
     @Override
+    /**
+     * <p>Операция ввода типа Character</p>
+     * <p>возвращает символ только в том случае, если он есть в переданном наборе.</p>
+     * <p>не выходит из метода до тех пор, пока не введен разрешенный символ.</p>
+     * @param operationsSet Set (набор типов Character. (разрешенные символы для ввода))
+     * @param scanner переменная типа Scanner
+     * @return Character
+     */
     public Character inputSign(Set<Character> operationsSet, Scanner scanner) {
         Character signResult;
         String string;
@@ -52,6 +67,12 @@ public class InputElement implements Input {
     }
 
     @Override
+    /**
+     * <p>Метод поэлементного заполнения набора разрешенных символов</p>
+     * @param character переаваемый символ
+     * @return true, если операция добавление прошла без конфликтов.
+     * (т.е. если вводимый символ не существует в наборе answerSet)
+     */
     public boolean fillAnswerSet(Character character) {
         return answerSet.add(character);
     }
