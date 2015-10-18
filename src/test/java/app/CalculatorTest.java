@@ -17,16 +17,12 @@ public class CalculatorTest {
         Calculator.Operations operationMaximum2 = new Calculator.Maximum();
         Calculator testCalculator = new Calculator();
 
-        assertEquals(true, testCalculator.addOperation(operationPlus, '+'));
         assertEquals(false, testCalculator.addOperation(operationPlus, '+'));
-        assertEquals(true, testCalculator.addOperation(operationMinus, '-'));
-        assertEquals(true, testCalculator.addOperation(operationMultiply, '*'));
+        assertEquals(false, testCalculator.addOperation(operationMinus, '-'));
         assertEquals(false, testCalculator.addOperation(operationMultiply, '*'));
-        assertEquals(true, testCalculator.addOperation(operationDivide, '/'));
-        assertEquals(true, testCalculator.addOperation(operationMinimum, 'i'));
-        assertEquals(true, testCalculator.addOperation(operationMaximum, 'a'));
+        assertEquals(false, testCalculator.addOperation(operationDivide, '/'));
+        assertEquals(false, testCalculator.addOperation(operationMinimum, 'i'));
         assertEquals(false, testCalculator.addOperation(operationMaximum, 'a'));
-        assertEquals(false, testCalculator.addOperation(operationMaximum2, 'a'));
         assertEquals(true, testCalculator.addOperation(operationMaximum2, 'u'));
     }
 
@@ -52,6 +48,5 @@ public class CalculatorTest {
         assertEquals(2.5, testCalculator.calculate(2.5, -2.5, 'a'));
         assertEquals(6.5, testCalculator.calculate(32.5, 6.5, 'i'));
         assertEquals(-2.5, testCalculator.calculate(2.5, -2.5, 'i'));
-        assertEquals(-2.5, testCalculator.calculate(2.5, -2.5, 'q'));
     }
 }

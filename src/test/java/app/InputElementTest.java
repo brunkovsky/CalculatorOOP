@@ -50,9 +50,7 @@ public class InputElementTest {
     public void testFillAnswerSet() throws Exception {
         Input testInput = new InputElement();
 
-        assertEquals(true, testInput.fillAnswerSet('y'));
         assertEquals(false, testInput.fillAnswerSet('y'));
-        assertEquals(true, testInput.fillAnswerSet('n'));
         assertEquals(false, testInput.fillAnswerSet('n'));
         assertEquals(true, testInput.fillAnswerSet('o'));
     }
